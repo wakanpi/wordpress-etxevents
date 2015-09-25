@@ -75,4 +75,26 @@ class ETXEvent {
         echo 'TEST MODE';
     }
 
+
+    public static function deactivate_key( $key ) {
+        $response = self::http_post( self::build_query( array( 'key' => $key, 'blog' => get_option('home') ) ), 'deactivate' );
+
+        if ( $response[1] != 'deactivated' )
+            return 'failed';
+
+        return $response[1];
+    }
+
+
+    public static function http_post( $request, $path, $ip=null ) {
+
+        echo $request;
+        echo $path;
+        echo $ip;
+    }
+
+    public static function build_query( $args ) {
+        return _http_build_query( $args, '', '&' );
+    }
+
 }

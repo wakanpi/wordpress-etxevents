@@ -42,4 +42,14 @@ class ETXEvents_Admin
         array_unshift( $links, $settings_link );
         return $links;
     }
+
+    public static function get_page_url( $page = 'config' )
+    {
+
+        $args = array('page' => 'etxevents-config');
+
+        $url = add_query_arg( $args, class_exists( 'Jetpack' ) ? admin_url( 'admin.php' ) : admin_url( 'options-general.php' ) );
+
+        return $url;
+    }
 }

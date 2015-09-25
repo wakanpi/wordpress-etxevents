@@ -46,7 +46,7 @@
     require_once( ETXEVENT__PLUGIN_DIR . 'class.etxevents.php' );
 //    require_once( ETXEVENT__PLUGIN_DIR . 'class.etxevent-widget.php' );
 
-    add_action( 'init', array( 'ETXEvents', 'init' ) );
+    add_action( 'init', array( 'ETXEvent', 'init' ) );
 
     if ( is_admin() ) {
         require_once( ETXEVENT__PLUGIN_DIR . 'class.etxevents-admin.php' );
